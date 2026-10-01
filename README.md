@@ -67,7 +67,7 @@ It combines **AI-powered fact-checking**, **community reviews**, and **gamificat
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/KyleOkunda/media-information-literacy-platform.git
+   git clone https://github.com/Rita23-tech/media-information-literacy-platform.git
    cd miles
    ```
 
