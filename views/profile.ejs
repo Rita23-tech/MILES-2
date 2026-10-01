@@ -1,0 +1,895 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MILES - Media &amp; Information Literacy Engagement System</title>
+    <meta
+      name="description"
+      content="Fight misinformation with AI-powered credibility analysis and collaborative fact-checking"
+    />
+    <meta name="author" content="MILES Platform" />
+
+    <meta
+      property="og:title"
+      content="MILES - Media &amp; Information Literacy Platform"
+    />
+    <meta
+      property="og:description"
+      content="Join a community dedicated to fighting misinformation through AI-powered credibility analysis"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/f451cfc2d6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" crossorigin="" href="css/index.css" />
+  </head>
+
+  <body>
+    <div id="root">
+      <div
+        role="region"
+        aria-label="Notifications (F8)"
+        tabindex="-1"
+        style="pointer-events: none"
+      >
+        <ol
+          tabindex="-1"
+          class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"
+        ></ol>
+      </div>
+      <section
+        aria-label="Notifications alt+T"
+        tabindex="-1"
+        aria-live="polite"
+        aria-relevant="additions text"
+        aria-atomic="false"
+      ></section>
+      <div class="min-h-screen bg-background">
+        <nav class="bg-card border-b border-border shadow-sm">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+              <a class="flex items-center space-x-2" href="/"
+                ><div
+                  class="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-primary-foreground font-bold text-sm"
+                    >M</span
+                  >
+                </div>
+                <span
+                  class="text-xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent"
+                  >MILES</span
+                ></a
+              >
+              <div class="hidden md:flex items-center space-x-1">
+                <a
+                  class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 text-muted-foreground hover:text-foreground hover:bg-muted"
+                  href="/"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-house w-5 h-5"
+                  >
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                    <path
+                      d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    ></path></svg
+                  ><span class="hidden lg:inline">Home</span></a
+                ><a
+                  class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 text-muted-foreground hover:text-foreground hover:bg-muted"
+                  href="/post"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-plus w-5 h-5"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 12h8"></path>
+                    <path d="M12 8v8"></path></svg
+                  ><span class="hidden lg:inline">Post</span></a
+                ><a
+                  class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 text-muted-foreground hover:text-foreground hover:bg-muted"
+                  href="/chatbot"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-message-circle w-5 h-5"
+                  >
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg
+                  ><span class="hidden lg:inline">AI Tutor</span></a
+                >
+                <a
+                  class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 text-muted-foreground hover:text-foreground hover:bg-muted"
+                  href="/myposts"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    class="x14rh7hd"
+                    style="--x-color: rgb(var(--ig-primary-icon))"
+                  >
+                    <title>Posts</title>
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      d="M3 3H21V21H3z"
+                    ></path>
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      d="M9.01486 3 9.01486 21"
+                    ></path>
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      d="M14.98514 3 14.98514 21"
+                    ></path>
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      d="M21 9.01486 3 9.01486"
+                    ></path>
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      d="M21 14.98514 3 14.98514"
+                    ></path></svg
+                  ><span class="hidden lg:inline">My Posts</span></a
+                ><a
+                  class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 bg-primary/10 text-primary font-medium"
+                  href="/profile"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-user w-5 h-5"
+                  >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle></svg
+                  ><span class="hidden lg:inline">Profile</span></a
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="relative" id="nav-avatar-wrap">
+                  <button id="nav-avatar-btn" onclick="(function(){document.getElementById('nav-avatar-dropdown').classList.toggle('hidden');event.stopPropagation();})()" style="background:none;border:none;padding:0;cursor:pointer;">
+                    <span class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8 border-2 border-primary/40 hover:border-primary transition-all duration-200" style="display:block;">
+                      <img id="nav-avatar-img" class="aspect-square h-full w-full object-cover" src="<%= userInfo.profile_picture ? '/' + userInfo.profile_picture : '/images/smiley.webp' %>" alt="Profile" />
+                    </span>
+                  </button>
+                  <div id="nav-avatar-dropdown" class="hidden absolute right-0 top-full mt-2 w-44 bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden" style="min-width:170px;">
+                    <div class="px-4 py-3 border-b border-border/50">
+                      <p class="text-xs text-muted-foreground">Signed in as</p>
+                      <p id="nav-user-email" class="text-xs font-semibold truncate text-foreground"></p>
+                    </div>
+                    <a href="/profile" class="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-muted transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      View Profile
+                    </a>
+                    <button onclick="milesLogout()" class="flex w-full items-center gap-2 px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors border-t border-border/50">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                      Log Out
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:hidden border-t border-border">
+            <div class="flex justify-around py-2">
+              <a
+                class="flex flex-col items-center space-y-1 px-3 py-2 rounded-lg text-muted-foreground"
+                href="/"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-house w-5 h-5"
+                >
+                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                  <path
+                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  ></path></svg
+                ><span class="text-xs">Home</span></a
+              ><a
+                class="flex flex-col items-center space-y-1 px-3 py-2 rounded-lg text-muted-foreground"
+                href="/post"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-plus w-5 h-5"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 12h8"></path>
+                  <path d="M12 8v8"></path></svg
+                ><span class="text-xs">Post</span></a
+              ><a
+                class="flex flex-col items-center space-y-1 px-3 py-2 rounded-lg text-muted-foreground"
+                href="/chatbot"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-message-circle w-5 h-5"
+                >
+                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                </svg>
+                <span class="text-xs">AI Tutor</span></a
+              >
+
+              <a
+                class="flex flex-col items-center space-y-1 px-3 py-2 rounded-lg text-muted-foreground"
+                href="/myposts"
+                ><svg
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="x14rh7hd"
+                  style="--x-color: rgb(var(--ig-primary-icon))"
+                >
+                  <title>Posts</title>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2px"
+                    d="M3 3H21V21H3z"
+                  ></path>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2px"
+                    d="M9.01486 3 9.01486 21"
+                  ></path>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2px"
+                    d="M14.98514 3 14.98514 21"
+                  ></path>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2px"
+                    d="M21 9.01486 3 9.01486"
+                  ></path>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2px"
+                    d="M21 14.98514 3 14.98514"
+                  ></path></svg
+                ><span class="text-xs">My Posts</span></a
+              ><a
+                class="flex flex-col items-center space-y-1 px-3 py-2 rounded-lg text-primary"
+                href="/profile"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user w-5 h-5"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle></svg
+                ><span class="text-xs">Profile</span></a
+              >
+            </div>
+          </div>
+        </nav>
+        <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div class="max-w-4xl mx-auto space-y-6">
+            <div
+              class="rounded-lg border bg-card text-card-foreground shadow-lg border-border/50"
+            >
+              <div class="flex flex-col space-y-1.5 p-6">
+                <div
+                  class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6"
+                >
+                  <div
+                    style="
+                      width: 100%;
+                      display: flex;
+                      justify-content: space-between;
+                    "
+                  >
+                    <!-- Profile Picture with upload overlay -->
+                    <div class="relative" style="width:96px;height:96px;flex-shrink:0;">
+                      <span class="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24 border-4 border-primary/20" style="display:block;">
+                        <img id="profile-pic-large" class="aspect-square h-full w-full object-cover" src="<%= userInfo.profile_picture ? '/' + userInfo.profile_picture : '/images/smiley.webp' %>" alt="Profile Picture" />
+                      </span>
+                      <label for="profile-pic-input" title="Change profile picture" style="position:absolute;bottom:0;right:0;background:rgba(124,58,237,0.85);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                      </label>
+                      <input type="file" id="profile-pic-input" accept="image/*" style="display:none;" />
+                      <div id="pic-upload-status" style="display:none;position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:#7c3aed;color:white;font-size:11px;padding:2px 8px;border-radius:999px;white-space:nowrap;">Uploading...</div>
+                    </div>
+                    <span>
+                      <button
+                        title="Log Out"
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                        id="logout"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out w-4 h-4">
+                          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                          <polyline points="16 17 21 12 16 7"></polyline>
+                          <line x1="21" x2="9" y1="12" y2="12"></line>
+                        </svg>
+                        Log Out
+                      </button>
+                    </span>
+                  </div>
+                  <div class="flex-1 space-y-3">
+                    <div class="flex items-center space-x-2">
+                      <h1 class="text-2xl font-bold" id="profile-username-display">
+                        <%= userInfo.username%>
+                      </h1>
+                      <button id="edit-username-btn" class="text-muted-foreground hover:text-primary transition-colors" title="Edit Username">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg>
+                      </button>
+                      <div id="edit-username-form" class="hidden flex items-center space-x-2">
+                        <input type="text" id="edit-username-input" class="h-8 rounded-md border border-input bg-background px-2 py-1 text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" value="<%= userInfo.username%>" />
+                        <button id="save-username-btn" class="h-8 rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground hover:bg-primary/90">Save</button>
+                        <button id="cancel-username-btn" class="h-8 rounded-md bg-muted px-3 text-xs font-medium text-foreground hover:bg-muted/80">Cancel</button>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-wrap items-center gap-4 text-sm text-muted-foreground"
+                    >
+                      <div class="flex items-center space-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-mail w-4 h-4"
+                        >
+                          <rect
+                            width="20"
+                            height="16"
+                            x="2"
+                            y="4"
+                            rx="2"
+                          ></rect>
+                          <path
+                            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                          ></path></svg
+                        ><span id="user-email"></span>
+                      </div>
+                    </div>
+                    <!--
+                    <div class="flex flex-wrap gap-2">
+                      <div
+                        class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-credible-high text-white flex items-center space-x-1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-shield w-3 h-3"
+                        >
+                          <path
+                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                          ></path></svg
+                        ><span>Fact Checker</span>
+                      </div>
+                      
+                      <div
+                        class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-primary text-white flex items-center space-x-1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-award w-3 h-3"
+                        >
+                          <path
+                            d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+                          ></path>
+                          <circle cx="12" cy="8" r="6"></circle></svg
+                        ><span>Community Leader</span>
+                      </div>
+                      <div
+                        class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-credible-medium text-white flex items-center space-x-1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-trending-up w-3 h-3"
+                        >
+                          <polyline
+                            points="22 7 13.5 15.5 8.5 10.5 2 17"
+                          ></polyline>
+                          <polyline points="16 7 22 7 22 13"></polyline></svg
+                        ><span>Media Literacy Expert</span>
+                      </div>
+                    </div>
+                -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-lg border-border/50"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-shield w-5 h-5 text-primary"
+                    >
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                      ></path></svg
+                    ><span>Reputation Score</span>
+                  </h3>
+                </div>
+                <div class="p-6 pt-0 space-y-4">
+                  <div class="text-center space-y-2">
+                    <div
+                      id="cred-score"
+                      class="text-4xl font-bold text-credible-high"
+                    >
+                      <%=userInfo.rep_points%>%
+                    </div>
+                    <p
+                      class="text-sm text-muted-foreground"
+                      id="cred-review"
+                    ></p>
+                  </div>
+                  <div class="bg-muted/30 rounded-lg p-3 space-y-2">
+                    <h4 class="font-medium text-sm">How it's calculated:</h4>
+                    <ul class="text-xs text-muted-foreground space-y-1">
+                      <li>• Accuracy of shared content</li>
+                      <li>• Quality of fact-checking contributions</li>
+                      <li>• Community feedback and verification</li>
+                      <li>• Consistency in reliable information sharing</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-lg border-border/50"
+              >
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <h3
+                    class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-trophy w-5 h-5 text-primary"
+                    >
+                      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                      <path d="M4 22h16"></path>
+                      <path
+                        d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                      ></path>
+                      <path
+                        d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                      ></path>
+                      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg
+                    ><span>Activity Stats</span>
+                  </h3>
+                </div>
+                <div class="p-6 pt-0">
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center space-y-1">
+                      <div class="flex items-center justify-center space-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-message-circle w-4 h-4 text-primary"
+                        >
+                          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg
+                        ><span class="text-2xl font-bold"
+                          ><%=userInfo.reviews_given%></span
+                        >
+                      </div>
+                      <p class="text-xs text-muted-foreground">Reviews Given</p>
+                    </div>
+                    <div class="text-center space-y-1">
+                      <div class="flex items-center justify-center space-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-star w-4 h-4 text-primary"
+                        >
+                          <path
+                            d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+                          ></path></svg
+                        ><span class="text-2xl font-bold"
+                          ><%=userInfo.no_of_posts%></span
+                        >
+                      </div>
+                      <p class="text-xs text-muted-foreground">Posts</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border text-card-foreground shadow-sm bg-primary/5 border-primary/20"
+            >
+              <div id="guidelines" class="flex flex-col space-y-1.5 p-6">
+                <h3 class="font-semibold tracking-tight text-lg text-primary">
+                  GuideLines for Content:
+                </h3>
+              </div>
+              <div class="p-6 pt-0 space-y-3">
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <span class="text-primary text-xs font-bold">1</span>
+                  </div>
+                  <p class="text-sm">
+                    Inappropriate images will be declined and will not be
+                    processed. Eg: Images containing nudity.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <span class="text-primary text-xs font-bold">2</span>
+                  </div>
+                  <p class="text-sm">
+                    Content that enhances racism and any other forms of
+                    deliberate discrimination will not be processed.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <span class="text-primary text-xs font-bold">3</span>
+                  </div>
+                  <p class="text-sm">
+                    No Harmful Misinformation: Intentionally spreading false or
+                    misleading content to manipulate others is prohibited.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <span class="text-primary text-xs font-bold">4</span>
+                  </div>
+                  <p class="text-sm">
+                    Respectful Discussions: Critique the content, not the
+                    person. No personal attacks, harassment, or hate speech.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <span class="text-primary text-xs font-bold">5</span>
+                  </div>
+                  <p class="text-sm">
+                    No Spam: Refrain from flooding comments with irrelevant,
+                    promotional, or repetitive material.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <span class="text-primary text-xs font-bold">6</span>
+                  </div>
+                  <p class="text-sm">
+                    Violations of stated guidelines may result in temporary
+                    banning and will affect Credibility Scores and Reputation
+                    Points.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <span class="text-primary text-xs font-bold">7</span>
+                  </div>
+                  <p class="text-sm">
+                    This is a safe space. Feel free share any content without
+                    violating the said guidelines. We ought to remain credible.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+      // Set email from session
+      var emailHolder = document.getElementById("user-email");
+      var sessionEmail = sessionStorage.getItem("user") || '';
+      emailHolder.textContent = sessionEmail;
+
+      var navEmailEl = document.getElementById('nav-user-email');
+      var sessionUsername = sessionStorage.getItem('username');
+      if (navEmailEl) navEmailEl.textContent = sessionUsername ? '@' + sessionUsername : sessionEmail;
+
+      // Store profile picture in sessionStorage so other pages can use it
+      <% if (userInfo.profile_picture) { %>
+        sessionStorage.setItem('profile_picture', '<%= userInfo.profile_picture %>');
+      <% } %>
+
+      // Set credibility review
+      var credReview = document.getElementById("cred-review");
+      var credScore = parseInt(document.getElementById("cred-score").textContent);
+      if (credScore >= 70) {
+        credReview.textContent = "Highly Credible user";
+      } else if (credScore >= 60) {
+        credReview.textContent = "Credible user";
+      }
+
+      // Logout
+      function milesLogout() {
+        var sure = confirm("Are you sure you want to log out?");
+        if (sure) {
+          sessionStorage.clear();
+          fetch("/profile", { method: "POST" }).then(function() {
+            window.location.href = "/signin";
+          });
+        }
+      }
+      var logout = document.getElementById("logout");
+      logout.addEventListener("click", milesLogout);
+
+      // Avatar dropdown close on outside click
+      document.addEventListener('click', function(e) {
+        var dd  = document.getElementById('nav-avatar-dropdown');
+        var btn = document.getElementById('nav-avatar-btn');
+        if (dd && btn && !btn.contains(e.target) && !dd.contains(e.target)) {
+          dd.classList.add('hidden');
+        }
+      });
+
+      // Profile picture upload
+      var picInput = document.getElementById('profile-pic-input');
+      if (picInput) {
+        picInput.addEventListener('change', function(e) {
+          var file = e.target.files[0];
+          if (!file) return;
+          if (file.size > 5 * 1024 * 1024) {
+            alert('Image must be under 5MB');
+            return;
+          }
+          var statusEl = document.getElementById('pic-upload-status');
+          statusEl.style.display = 'block';
+          statusEl.textContent = 'Uploading...';
+
+          var formData = new FormData();
+          formData.append('profile_picture', file);
+
+          fetch('/profile/picture', { method: 'POST', body: formData })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+              if (data.path) {
+                // Update both profile pics on the page
+                document.getElementById('profile-pic-large').src = '/' + data.path;
+                var navImg = document.getElementById('nav-avatar-img');
+                if (navImg) navImg.src = '/' + data.path;
+                sessionStorage.setItem('profile_picture', data.path);
+                statusEl.textContent = 'Updated!';
+                setTimeout(function() { statusEl.style.display = 'none'; }, 2000);
+              } else {
+                statusEl.textContent = 'Failed';
+                setTimeout(function() { statusEl.style.display = 'none'; }, 2000);
+              }
+            })
+            .catch(function() {
+              statusEl.textContent = 'Error';
+              setTimeout(function() { statusEl.style.display = 'none'; }, 2000);
+            });
+        });
+      }
+
+      // Username Edit Logic
+      const editBtn = document.getElementById('edit-username-btn');
+      const saveBtn = document.getElementById('save-username-btn');
+      const cancelBtn = document.getElementById('cancel-username-btn');
+      const editForm = document.getElementById('edit-username-form');
+      const usernameDisplay = document.getElementById('profile-username-display');
+      const usernameInput = document.getElementById('edit-username-input');
+
+      if (editBtn) {
+        editBtn.addEventListener('click', () => {
+          usernameDisplay.classList.add('hidden');
+          editBtn.classList.add('hidden');
+          editForm.classList.remove('hidden');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+          usernameDisplay.classList.remove('hidden');
+          editBtn.classList.remove('hidden');
+          editForm.classList.add('hidden');
+          usernameInput.value = usernameDisplay.textContent.trim();
+        });
+
+        saveBtn.addEventListener('click', () => {
+          const newUsername = usernameInput.value.trim();
+          if (newUsername.length < 3) {
+            alert("Username must be at least 3 characters.");
+            return;
+          }
+          saveBtn.textContent = 'Saving...';
+          saveBtn.disabled = true;
+
+          fetch('/update-username', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: newUsername })
+          }).then(res => res.json()).then(data => {
+            saveBtn.textContent = 'Save';
+            saveBtn.disabled = false;
+            
+            if (data.message === "Username updated successfully!") {
+              usernameDisplay.textContent = newUsername;
+              sessionStorage.setItem("username", newUsername);
+              // Also update the UI top right dropdown
+              const navAvatarUsername = document.getElementById('nav-user-email');
+              if (navAvatarUsername) {
+                  navAvatarUsername.textContent = '@' + newUsername; // Update avatar too
+              }
+              cancelBtn.click(); // Hide form
+            } else {
+              alert(data.message || "Failed to update username");
+            }
+          }).catch(err => {
+            saveBtn.textContent = 'Save';
+            saveBtn.disabled = false;
+            alert("Network error.");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
